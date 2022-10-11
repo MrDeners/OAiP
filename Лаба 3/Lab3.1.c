@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main ()
 {
     int arr[100];
 int size;
-    printf("Input array size: ");
-    while (scanf("%d", &size) !=1)
+    printf("Input array size(<100): ");
+    while (scanf("%d", &size) !=1 || size<0 || size>100)
     {
-        printf ("Error. Input number.\nInput array size: ");
+        printf ("Error. Input number. Number > 0\nInput array size: ");
         rewind (stdin);
     }
     if (size<=100)
@@ -23,6 +24,7 @@ int size;
         switch (operation)
         {
             case 1:
+                srand(time(NULL));
                 for(int i=0; i<size; i++)
                 {
                     arr[i]=rand()%201-100;
@@ -47,15 +49,13 @@ int size;
       for(int i=0; i<size; i++)
           if (arr[i]==0)
               last_zero=i;
-      for(int i=last_zero; i<size; i++)
+        if (last_zero==0)
+            printf("\nThere is no zero in the array, so the sum is zero.\n");
+        else for(int i=last_zero; i<size; i++)
           sum=sum+arr[i];
           printf("Number of positive members: %d\n", kolvo);
+        if (last_zero!=0)
           printf("Sum of numbers after the last zero: %d\n\n", sum);
           return 0;
-      }
-    else
-      {
-       printf("Error. Array size exceeded.\n");
-      return 0;
       }
 }
