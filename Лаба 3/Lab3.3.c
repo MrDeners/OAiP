@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main ()
 {
     int arr[100];
 int size;
     printf("Input array size: ");
-    while (scanf("%d", &size) !=1)
-    {
-        printf ("Error. Input number.\nInput array size: ");
+    while (scanf("%d", &size) !=1 || size<0 || size>100)
+           {
+        printf("Error. Input number. Number > 0\nInput array size: ");
         rewind (stdin);
     }
     if (size<=100)
@@ -23,6 +24,7 @@ int size;
         switch (operation)
         {
             case 1:
+                srand(time(NULL));
                 for(int i=0; i<size; i++)
                 {
                     arr[i]=rand()%201-100;
@@ -39,12 +41,13 @@ int size;
           }
                 break;
         }
-        int povtor = 0, povtor_top = 0, el = 0;
+        }
+    int povtor = 0, povtor_top = 0, el = 0, flag;
         for (int i = 0; i < size; i++)
-          {
+         {
             for (int j = i; j < size; j++)
             {
-              if (arr[i] == arr[j])
+              if (arr[i] == arr[j] && arr[i] % 2 == 0)
               {
                 povtor++;
               }
@@ -54,17 +57,17 @@ int size;
               povtor_top = povtor;
               el = arr[i];
             }
+             if (povtor==povtor_top && povtor>1)
+             {
+                 el=arr[i];
+                 printf("Several even elements are repeated.\nOne of them: %d\n", el);
+                 flag++;
+             }
             povtor = 0;
           }
         if (povtor_top==1)
-    printf("\nSome elements repeat the same number of times.\n");
-        else
-          printf("\nMost common element: %d\n", el);
+        printf("\nNo repeating even element\n");
+        if (povtor_top!=1 && flag==0)
+          printf("\nMost common even element: %d\n", el);
           return 0;
-      }
-    else
-      {
-       printf("Error. Array size exceeded.\n");
-      return 0;
-      }
-}
+        }
