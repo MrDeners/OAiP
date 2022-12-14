@@ -1,0 +1,15 @@
+int lineOfArray(int line);
+int collOfArray(int coll);
+int** memory(int **arr, int line, int coll);
+void keyboardInputArray(int **arr, int line, int coll);
+void randomInputArray(int **arr, int line, int coll);
+int pInputArray(int operation);
+int** inputArray(int **arr, int line, int coll, int operation);
+void outputTwoArray(int **arr, int line, int coll);
+void outputOneArray(int *arr, int size);
+int* memoryNewArray(int *narr, int size);
+int** inputNewArray(int **arr, int **narr, int line, int coll, int maxNum);
+void shell(int **narr, int size);
+void outputTwoArrayFirstLine(int **arr, int line, int coll);
+int** changeArray(int **arr, int **narr, int **farr, int line, int coll);
+void cleaning(int **arr, int line);
