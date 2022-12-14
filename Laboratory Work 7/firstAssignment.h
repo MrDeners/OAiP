@@ -1,0 +1,12 @@
+void firstAssignment(void);
+char* memory (char *arr, int memorySt);
+char* reallocation(char *arr, int memorySt);
+void printInputString(void);
+char* inputString (char* arr, int memorySt);
+void printInputK (void);
+int inputK (void);
+char* changeString(char* arr, int k, int numOfElements);
+int searchNumOfElements (char* arr);
+char* finalReallocation (char *arr, int numOfElements);
+void outputString (char* arr);
+void cleaning(char* arr);
