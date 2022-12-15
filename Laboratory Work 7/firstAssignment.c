@@ -4,7 +4,6 @@
 #include "firstAssignment.h"
 
 
-
 void firstAssignment (void) {
     int memorySt=0, k=0, numOfElements=0;
     char *arr = NULL;
@@ -76,7 +75,7 @@ char* changeString(char* arr, int k, int numOfElements) {
     int count=-1;
     for(int i=0; i < numOfElements; i++) {
         count++;
-        if (arr[i]==' ') {
+        if (arr[i]==' ' || arr[i]=='\t') {
             if(count<k) {
                 int fl2=numOfElements;
                 for (int fl=count+1; fl>0; fl--) {
