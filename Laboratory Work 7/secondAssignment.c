@@ -4,7 +4,6 @@
 #include "secondAssignment.h"
 
 
-
 void secondAssignment (void) {
     char *arr = NULL, *sarr = NULL;
     int memorySt=0, numOfElementsSub = 0, numOfElements = 0;
